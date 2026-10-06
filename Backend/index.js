@@ -1,6 +1,7 @@
 const express = require("express");
 const connection = require("./db");
 const cors = require("cors");
+require("dotenv").config();
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
@@ -521,6 +522,8 @@ app.delete("/delete", (req, res) => {
     },
   );
 });
-app.listen(4000, () => {
-  console.log("Server running on port http://localhost:4000");
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

@@ -8,7 +8,7 @@ const connection = mysql.createConnection({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   ssl: {
-    ca: require("fs").readFileSync("./ca.pem"),
+    ca: require("fs").readFileSync("/etc/secrets/ca.pem"),
     rejectUnauthorized: true,
   },
 });

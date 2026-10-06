@@ -8,7 +8,7 @@ function Firstname() {
   let [searchlist, setsearch] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:4000/search")
+    fetch("https://student-registration-backend-9miv.onrender.com/search")
       .then((response) => {
         return response.json();
       })

@@ -169,7 +169,7 @@ function Updatestudent() {
       registration_date: registrationDate,
       status,
     };
-    fetch("http://localhost:4000/update", {
+    fetch("https://student-registration-backend-9miv.onrender.com/update", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

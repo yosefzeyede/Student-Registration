@@ -7,7 +7,7 @@ function Classsection(props) {
   let [classlist, setClass] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/section")
+    fetch("https://student-registration-backend-9miv.onrender.com/section")
       .then((response) => response.json())
       .then((data) => {
         setsection(data);
@@ -18,7 +18,7 @@ function Classsection(props) {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:4000/class")
+    fetch("https://student-registration-backend-9miv.onrender.com/class")
       .then((response) => response.json())
       .then((data) => {
         setClass(data);

@@ -171,7 +171,7 @@ function Studentregistration({ user, setUser }) {
       registration_date: registrationDate,
       status,
     };
-    fetch("http://localhost:4000/student", {
+    fetch("https://student-registration-backend-9miv.onrender.com/student", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

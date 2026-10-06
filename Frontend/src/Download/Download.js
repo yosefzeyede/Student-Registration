@@ -4,7 +4,7 @@ import "./download.css";
 function Download() {
   const [download, setdownload] = useState("");
   function downloadExcel() {
-    fetch("http://localhost:4000/information")
+    fetch("https://student-registration-backend-9miv.onrender.com/information")
       .then((response) => response.json())
       .then((data) => {
         const worksheet = XLSX.utils.json_to_sheet(data);

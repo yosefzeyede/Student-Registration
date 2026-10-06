@@ -34,7 +34,7 @@ function Login({ setUser }) {
       return;
     }
 
-    fetch("http://localhost:4000/login", {
+    fetch("https://student-registration-backend-9miv.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

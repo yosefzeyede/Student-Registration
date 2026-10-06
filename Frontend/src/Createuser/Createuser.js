@@ -39,18 +39,21 @@ function Createuser() {
       return;
     }
 
-    fetch("http://localhost:4000/create-users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+    fetch(
+      "https://student-registration-backend-9miv.onrender.com/create-users",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
 
-      body: JSON.stringify({
-        username: cleanUsername,
-        password: password,
-        role: role,
-      }),
-    })
+        body: JSON.stringify({
+          username: cleanUsername,
+          password: password,
+          role: role,
+        }),
+      },
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

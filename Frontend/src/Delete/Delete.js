@@ -32,7 +32,7 @@ function Delete() {
       student_id: studentids,
     };
 
-    fetch("http://localhost:4000/delete", {
+    fetch("https://student-registration-backend-9miv.onrender.com/delete", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

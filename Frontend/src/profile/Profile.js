@@ -33,7 +33,7 @@ function Profile({ user, setUser }) {
 
     try {
       const response = await fetch(
-        `http://localhost:4000/upload-profile/${user.user_id}`,
+        `https://student-registration-backend-9miv.onrender.com/upload-profile/${user.user_id}`,
         {
           method: "POST",
           body: formData,
@@ -67,7 +67,7 @@ function Profile({ user, setUser }) {
       <button onClick={uploadProfileImage}>Upload Profile</button>
       {user.profile_image ? (
         <img
-          src={`http://localhost:4000${user.profile_image}`}
+          src={`https://student-registration-backend-9miv.onrender.com${user.profile_image}`}
           alt="Profile"
           className="profile-image"
         />

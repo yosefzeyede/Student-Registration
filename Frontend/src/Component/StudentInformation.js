@@ -4,7 +4,7 @@ function StudentInformation() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/information")
+    fetch("https://student-registration-backend-9miv.onrender.com/information")
       .then((response) => response.json())
       .then((data) => {
         setStudents(data);

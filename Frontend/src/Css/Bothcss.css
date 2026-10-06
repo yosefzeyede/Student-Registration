@@ -1,0 +1,619 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+   LIGHT / DARK THEME VARIABLES
+========================================================= */
+
+.app {
+  /* Light mode */
+  --background: #f4f6f9;
+  --text: #1f2937;
+  --card: #ffffff;
+  --input-background: #ffffff;
+  --input-text: #111827;
+  --label-text: #374151;
+  --border: #dbe3ec;
+  --input-border: #d1d5db;
+  --top-background: #ffffff;
+  --top-border: #e5e7eb;
+  --disabled-background: #f3f4f6;
+  --disabled-text: #9ca3af;
+
+  min-height: 100vh;
+
+  background-color: var(--background);
+  color: var(--text);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+.app.dark {
+  --background: #121212;
+  --text: #f5f5f5;
+
+  --card: #1e1e1e;
+
+  --input-background: #2a2a2a;
+  --input-text: #ffffff;
+
+  --label-text: #e5e7eb;
+
+  --border: #444444;
+  --input-border: #555555;
+
+  --top-background: #1a1a1a;
+  --top-border: #3f3f3f;
+
+  --disabled-background: #333333;
+  --disabled-text: #888888;
+}
+
+/* =========================================================
+   FIXED TOP BUTTON BAR
+========================================================= */
+
+.top-button {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  background: var(--top-background);
+
+  border-bottom: 1px solid var(--top-border);
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+  z-index: 1000;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* =========================================================
+   COMMON TOP BUTTON STYLE
+========================================================= */
+
+.top-button button {
+  border: none;
+
+  padding: 11px 20px;
+
+  border-radius: 7px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+
+  color: white;
+
+  min-width: 150px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================================
+   BACK TO REGISTRATION
+========================================================= */
+
+.back-registration {
+  background-color: #198754;
+}
+
+.back-registration:hover {
+  background-color: #157347;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 10px rgba(25, 135, 84, 0.3);
+}
+
+/* =========================================================
+   UPDATE BUTTON
+========================================================= */
+
+
+.update-button:hover {
+  background-color: #e0a800;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
+}
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.delete-button {
+  background-color: #dc3545;
+}
+
+.delete-button:hover {
+  background-color: #bb2d3b;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+}
+
+/* =========================================================
+   BUTTON CLICK EFFECT
+========================================================= */
+
+.top-button button:active {
+  transform: translateY(0);
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================================
+   REGISTRATION CONTAINER
+========================================================= */
+
+#registration {
+  padding-top: 95px;
+  padding-bottom: 40px;
+}
+
+/* =========================================================
+   REGISTRATION FORM
+========================================================= */
+
+#registration .registration-form {
+  width: 90%;
+
+  max-width: 650px;
+
+  margin: 25px auto;
+
+  padding: 30px;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-top: 5px solid #2563eb;
+
+  border-radius: 12px;
+
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =========================================================
+   REGISTRATION HEADING
+========================================================= */
+
+#registration .registration-form h2 {
+  margin: 0 0 25px;
+
+  text-align: center;
+
+  font-size: 25px;
+
+  color: #1d4ed8;
+}
+
+/* =========================================================
+   UPDATE CONTAINER
+========================================================= */
+
+#update {
+  padding-top: 95px;
+  padding-bottom: 40px;
+}
+
+/* =========================================================
+   UPDATE FORM
+========================================================= */
+
+#update .update-form {
+  width: 90%;
+
+  max-width: 650px;
+
+  margin: 25px auto;
+
+  padding: 30px;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-top: 5px solid #ffff00;
+
+  border-radius: 12px;
+
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =========================================================
+   UPDATE HEADING
+========================================================= */
+
+#update .update-form h2 {
+  margin: 0 0 25px;
+
+  text-align: center;
+
+  font-size: 25px;
+
+  color: yellow;
+}
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  margin-bottom: 18px;
+}
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.form-group label {
+  margin-bottom: 7px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: var(--label-text);
+
+  transition: color 0.3s ease;
+}
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  padding: 11px 12px;
+
+  border: 1px solid var(--input-border);
+
+  border-radius: 7px;
+
+  background: var(--input-background);
+
+  color: var(--input-text);
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.form-group textarea {
+  min-height: 100px;
+
+  resize: vertical;
+
+  font-family: inherit;
+}
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================================================
+   UPDATE STUDENT ID
+========================================================= */
+
+#update .form-group:first-of-type input {
+  background: #f0fdf4;
+
+  border-color: #86efac;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   DARK MODE - UPDATE STUDENT ID
+========================================================= */
+
+.app.dark #update .form-group:first-of-type input {
+  background: #193326;
+
+  border-color: #3f8f5f;
+
+  color: white;
+}
+
+/* =========================================================
+   CLASS & SECTION
+========================================================= */
+
+.class-section {
+  width: 100%;
+
+  margin-top: 5px;
+}
+
+.class-section .form-group {
+  margin-bottom: 18px;
+}
+
+/* =========================================================
+   DISABLED SECTION
+========================================================= */
+
+.class-section select:disabled {
+  background: var(--disabled-background);
+
+  color: var(--disabled-text);
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   REGISTRATION SUBMIT BUTTON
+========================================================= */
+
+#registration .registration-form > button[type="submit"] {
+  width: 100%;
+
+  padding: 13px;
+
+  margin-top: 8px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+#registration .registration-form > button[type="submit"]:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   UPDATE SUBMIT BUTTON
+========================================================= */
+
+#update .update-form > button[type="submit"] {
+  width: 100%;
+
+  padding: 13px;
+
+  margin-top: 8px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #16a34a;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+#update .update-form > button[type="submit"]:hover {
+  background: #15803d;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.success-message {
+  margin-bottom: 20px;
+
+  padding: 12px 15px;
+
+  border-radius: 7px;
+
+  background: #dcfce7;
+
+  border: 1px solid #86efac;
+
+  color: #166534;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  text-align: center;
+}
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.error-message {
+  margin-bottom: 20px;
+
+  padding: 12px 15px;
+
+  border-radius: 7px;
+
+  background: #fee2e2;
+
+  border: 1px solid #fca5a5;
+
+  color: #991b1b;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  text-align: center;
+}
+
+/* =========================================================
+   FIRSTNAME COMPONENT
+========================================================= */
+
+.firstname-container {
+  width: 90%;
+
+  max-width: 650px;
+
+  margin: 20px auto;
+
+  color: var(--text);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  margin-top: 50px;
+
+  color: var(--text);
+
+  transition: color 0.3s ease;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .top-button {
+    height: 62px;
+
+    gap: 8px;
+
+    padding: 0 10px;
+  }
+
+  .top-button button {
+    padding: 9px 13px;
+
+    font-size: 13px;
+  }
+
+  #registration,
+  #update {
+    padding-top: 85px;
+  }
+
+  #registration .registration-form,
+  #update .update-form {
+    width: 94%;
+
+    padding: 22px;
+
+    margin-top: 20px;
+  }
+
+  #registration .registration-form h2,
+  #update .update-form h2 {
+    font-size: 21px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .top-button {
+    gap: 5px;
+  }
+
+  .top-button button {
+    padding: 8px 10px;
+
+    font-size: 12px;
+  }
+
+  #registration .registration-form,
+  #update .update-form {
+    width: 96%;
+
+    padding: 18px;
+  }
+}

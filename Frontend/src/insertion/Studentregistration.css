@@ -1,0 +1,787 @@
+/* =====================================================
+   STUDENT REGISTRATION SYSTEM
+   Studentregistration Component
+===================================================== */
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+#registration,
+#update,
+#delete {
+  margin: 100px 100px;
+}
+
+/* =====================================================
+   TOP NAVIGATION BUTTONS
+===================================================== */
+
+.top-button {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 25px 30px 10px;
+
+  display: flex;
+  align-items: center;
+
+  /* Changed from flex-end to flex-start */
+  justify-content: flex-start;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+/* =====================================================
+   TOP BUTTON - GENERAL
+===================================================== */
+
+.top-button button {
+  min-height: 40px;
+
+  padding: 9px 16px;
+
+  border: none;
+  border-radius: 7px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* =====================================================
+   BACK TO REGISTRATION
+===================================================== */
+
+.back-registration {
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+.back-registration:hover {
+  background-color: #15803d;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.25);
+}
+
+.back-registration:active {
+  transform: translateY(0);
+}
+
+/* =====================================================
+   UPDATE STUDENT BUTTON
+===================================================== */
+
+.update-button {
+  background-color: #eab308;
+  color: #ffffff;
+}
+
+.update-button:hover {
+  background-color: #ca8a04;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 10px rgba(234, 179, 8, 0.25);
+}
+
+.update-button:active {
+  transform: translateY(0);
+}
+
+/* =====================================================
+   DELETE STUDENT BUTTON
+===================================================== */
+
+.delete-button {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.delete-button:hover {
+  background-color: #b91c1c;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.25);
+}
+
+.delete-button:active {
+  transform: translateY(0);
+}
+.create-user {
+  background-color: blue;
+  color: #ffffff;
+}
+.create-user:hover {
+  background-color: rgb(56, 56, 182);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 10px rgba(38, 38, 220, 0.25);
+}
+.create-user:active {
+  transform: translateY(0);
+}
+.logout {
+  background-color: purple;
+  color: #ffffff;
+}
+.logout:hover {
+  background-color: rgb(56, 56, 18);
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 10px rgba(38, 38, 22, 0.25);
+}
+.logout:active {
+  transform: translateY(0);
+}
+
+/* =====================================================
+   REGISTRATION FORM
+===================================================== */
+
+.registration-form {
+  width: calc(100% - 60px);
+  max-width: 1200px;
+
+  margin: 15px auto 40px;
+  padding: 30px;
+
+  background-color: var(--card);
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =====================================================
+   REGISTRATION HEADING
+===================================================== */
+
+.registration-form h2 {
+  margin: 0 0 28px;
+
+  padding-bottom: 15px;
+
+  color: green;
+
+  font-size: 25px;
+  font-weight: 700;
+
+  /*
+     Green accent to match
+     Back to Registration button
+  */
+  border-bottom: 2px solid #16a34a;
+}
+
+/* =====================================================
+   SUCCESS MESSAGE
+===================================================== */
+
+.success-message {
+  margin-bottom: 20px;
+  padding: 12px 15px;
+
+  background-color: #ecfdf5;
+  color: #047857;
+
+  border: 1px solid #a7f3d0;
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =====================================================
+   ERROR MESSAGE
+===================================================== */
+
+.error-message {
+  margin-bottom: 20px;
+  padding: 12px 15px;
+
+  background-color: #fef2f2;
+  color: #b91c1c;
+
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.registration-form .form-group {
+  width: 100%;
+
+  margin-bottom: 18px;
+}
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.registration-form .form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--label-text);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =====================================================
+   INPUT / SELECT / TEXTAREA
+===================================================== */
+
+.registration-form .form-group input,
+.registration-form .form-group select,
+.registration-form .form-group textarea {
+  width: 100%;
+
+  padding: 11px 13px;
+
+  background-color: var(--input-background);
+  color: var(--input-text);
+
+  border: 1px solid var(--input-border);
+  border-radius: 7px;
+
+  outline: none;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =====================================================
+   INPUT HOVER
+===================================================== */
+
+.registration-form .form-group input:hover,
+.registration-form .form-group select:hover,
+.registration-form .form-group textarea:hover {
+  border-color: #9ca3af;
+}
+
+/* =====================================================
+   INPUT FOCUS
+===================================================== */
+
+.registration-form .form-group input:focus,
+.registration-form .form-group select:focus,
+.registration-form .form-group textarea:focus {
+  border-color: #16a34a;
+
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
+
+.registration-form .form-group input::placeholder,
+.registration-form .form-group textarea::placeholder {
+  color: var(--disabled-text);
+  font-size: 11px;
+  filter: blur(0.4px);
+}
+
+/* =====================================================
+   SELECT
+===================================================== */
+
+.registration-form .form-group select {
+  cursor: pointer;
+}
+
+/* =====================================================
+   TEXTAREA
+===================================================== */
+
+.registration-form .form-group textarea {
+  min-height: 100px;
+
+  resize: vertical;
+}
+
+/* =====================================================
+   CLASS + SECTION
+===================================================== */
+
+.class-section-wrapper {
+  width: 100%;
+
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.class-section-wrapper .form-group {
+  margin-bottom: 18px;
+}
+
+/* =====================================================
+   REGISTER STUDENT BUTTON
+   GREEN
+===================================================== */
+
+.registration-form > button[type="submit"] {
+  width: 100%;
+
+  margin-top: 8px;
+
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 7px;
+
+  background-color: #16a34a;
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.registration-form > button[type="submit"]:hover {
+  background-color: #15803d;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 12px rgba(22, 163, 74, 0.25);
+}
+
+.registration-form > button[type="submit"]:active {
+  transform: translateY(0);
+
+  box-shadow: none;
+}
+
+/* =====================================================
+   DISABLED INPUTS
+===================================================== */
+
+.registration-form input:disabled,
+.registration-form select:disabled,
+.registration-form textarea:disabled {
+  background-color: var(--disabled-background);
+
+  color: var(--disabled-text);
+
+  border-color: var(--border);
+
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   DATE INPUT
+===================================================== */
+
+.registration-form input[type="date"] {
+  cursor: pointer;
+}
+
+/* =====================================================
+   TEXT INPUT
+===================================================== */
+
+.registration-form input[type="text"] {
+  min-height: 42px;
+}
+
+/* =====================================================
+   UPDATE PAGE
+===================================================== */
+
+#update {
+  width: 100%;
+
+  padding-bottom: 20px;
+}
+
+/* =====================================================
+   UPDATE FORM
+===================================================== */
+
+/*
+   This targets forms inside the Update section
+   without changing Updatestudent.js.
+*/
+
+#update form {
+  width: calc(100% - 60px);
+  max-width: 1200px;
+
+  margin: 15px auto 40px;
+  padding: 30px;
+
+  background-color: var(--card);
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* =====================================================
+   UPDATE HEADING
+   YELLOW
+===================================================== */
+
+#update form h1,
+#update form h2,
+#update form h3 {
+  color: var(--text);
+
+  border-bottom: 2px solid #eab308;
+
+  padding-bottom: 15px;
+
+  margin-bottom: 28px;
+}
+
+/* =====================================================
+   UPDATE FORM INPUTS
+===================================================== */
+
+#update form input,
+#update form select,
+#update form textarea {
+  background-color: var(--input-background);
+  color: var(--input-text);
+
+  border: 1px solid var(--input-border);
+
+  border-radius: 7px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+#update form input:focus,
+#update form select:focus,
+#update form textarea:focus {
+  border-color: #eab308;
+
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.15);
+}
+
+/* =====================================================
+   UPDATE SUBMIT BUTTON
+   YELLOW
+===================================================== */
+
+#update form button[type="submit"] {
+  background-color: #eab308;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 7px;
+
+  padding: 12px 20px;
+
+  font-family: inherit;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#update form button[type="submit"]:hover {
+  background-color: #ca8a04;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 12px rgba(234, 179, 8, 0.25);
+}
+
+#update form button[type="submit"]:active {
+  transform: translateY(0);
+
+  box-shadow: none;
+}
+
+/* =====================================================
+   DELETE PAGE
+===================================================== */
+
+/* =====================================================
+   DELETE HEADING
+===================================================== */
+
+#delete form h1,
+#delete form h2,
+#delete form h3 {
+  color: var(--text);
+
+  border-bottom: 2px solid #dc2626;
+
+  padding-bottom: 15px;
+
+  margin-bottom: 28px;
+}
+
+/* =====================================================
+   DELETE SUBMIT BUTTON
+   RED
+===================================================== */
+
+#delete form button[type="submit"] {
+  background-color: #dc2626;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 7px;
+
+  padding: 12px 20px;
+
+  font-family: inherit;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+.app.dark .registration-form,
+.app.dark #update form,
+.app.dark #delete form {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* =====================================================
+   DARK MODE INPUT HOVER
+===================================================== */
+
+.app.dark .registration-form .form-group input:hover,
+.app.dark .registration-form .form-group select:hover,
+.app.dark .registration-form .form-group textarea:hover,
+.app.dark #update form input:hover,
+.app.dark #update form select:hover,
+.app.dark #update form textarea:hover,
+.app.dark #delete form input:hover,
+.app.dark #delete form select:hover,
+.app.dark #delete form textarea:hover {
+  border-color: #777777;
+}
+
+/* =====================================================
+   FOCUS ACCESSIBILITY
+===================================================== */
+
+.registration-form input:focus-visible,
+.registration-form select:focus-visible,
+.registration-form textarea:focus-visible,
+.registration-form button:focus-visible,
+.top-button button:focus-visible {
+  outline: 2px solid #16a34a;
+
+  outline-offset: 2px;
+}
+#update form button[type="submit"] {
+  background-color: yellow;
+  color: white;
+}
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+  .top-button {
+    padding: 20px 20px 10px;
+
+    justify-content: flex-start;
+  }
+
+  .registration-form,
+  #update form,
+  #delete form {
+    width: calc(100% - 40px);
+
+    padding: 25px;
+  }
+
+  .registration-form h1,
+  .registration-form h2,
+  #update form h1,
+  #update form h2,
+  #delete form h1,
+  #delete form h2 {
+    font-size: 22px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+  .top-button {
+    width: calc(100% - 30px);
+
+    padding: 15px 0 5px;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .top-button button {
+    width: 30%;
+
+    padding: 10px 8px;
+
+    font-size: 13px;
+  }
+
+  .registration-form,
+  #update form,
+  #delete form {
+    width: calc(100% - 30px);
+
+    margin-top: 10px;
+
+    padding: 20px 16px;
+
+    border-radius: 9px;
+  }
+
+  .registration-form h1,
+  .registration-form h2,
+  #update form h1,
+  #update form h2,
+  #delete form h1,
+  #delete form h2 {
+    margin-bottom: 22px;
+
+    font-size: 20px;
+  }
+
+  .registration-form .form-group {
+    margin-bottom: 16px;
+  }
+
+  .registration-form .form-group input,
+  .registration-form .form-group select,
+  .registration-form .form-group textarea {
+    padding: 10px 11px;
+
+    font-size: 14px;
+  }
+
+  .registration-form > button[type="submit"],
+  #update form button[type="submit"],
+  #delete form button[type="submit"] {
+    width: 100%;
+
+    padding: 11px 15px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+  .top-button {
+    width: calc(100% - 20px);
+
+    grid-template-columns: 1fr;
+  }
+
+  .registration-form,
+  #update form,
+  #delete form {
+    width: calc(100% - 20px);
+
+    padding: 18px 13px;
+  }
+
+  .registration-form h1,
+  .registration-form h2,
+  #update form h1,
+  #update form h2,
+  #delete form h1,
+  #delete form h2 {
+    font-size: 19px;
+  }
+}
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}

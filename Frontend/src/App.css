@@ -1,0 +1,262 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =====================================================
+   APP + THEME VARIABLES
+===================================================== */
+
+.app {
+  /* Light mode variables */
+  --background: #f4f6f9;
+  --text: #1f2937;
+
+  --card: #ffffff;
+  --input-background: #ffffff;
+  --input-text: #111827;
+
+  --label-text: #374151;
+
+  --border: #dbe3ec;
+  --input-border: #d1d5db;
+
+  --top-background: #ffffff;
+  --top-border: #e5e7eb;
+
+  --disabled-background: #f3f4f6;
+  --disabled-text: #9ca3af;
+
+  min-height: 100vh;
+
+  background-color: var(--background);
+  color: var(--text);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =====================================================
+   DARK MODE VARIABLES
+===================================================== */
+
+.app.dark {
+  --background: #121212;
+  --text: #f5f5f5;
+
+  --card: #1e1e1e;
+  --input-background: #2a2a2a;
+  --input-text: #ffffff;
+
+  --label-text: #e5e7eb;
+
+  --border: #444444;
+  --input-border: #555555;
+
+  --top-background: #1a1a1a;
+  --top-border: #3f3f3f;
+
+  --disabled-background: #333333;
+  --disabled-text: #888888;
+}
+
+/* =====================================================
+   LIGHT / DARK MODE BUTTON
+===================================================== */
+
+.theme-button {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  top: 10px;
+  right: 20px;
+
+  z-index: 99999;
+
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #333333;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.25s ease;
+}
+
+.theme-button:hover {
+  background-color: #555555;
+  transform: translateY(-2px);
+}
+
+.theme-button:active {
+  transform: translateY(0);
+}
+
+/* Light button when dark mode is active */
+
+.app.dark .theme-button {
+  background-color: #f5f5f5;
+  color: #222222;
+}
+
+.app.dark .theme-button:hover {
+  background-color: #ffffff;
+}
+
+/* =====================================================
+   CREATE USER BUTTON
+===================================================== */
+
+.create-user-top-button {
+  position: absolute;
+
+  top: 24px;
+
+  /*
+     Responsive right position:
+     - never less than 15px
+     - preferred value changes with screen width
+     - never more than 190px
+  */
+  right: clamp(15px, 12vw, 190px);
+
+  z-index: 9999;
+
+  min-height: 40px;
+
+  padding: 9px 16px;
+
+  border: none;
+  border-radius: 7px;
+
+  background-color: blue;
+  color: white;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.create-user-top-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.25);
+}
+
+/* =====================================================
+   ACTIVE
+===================================================== */
+
+.create-user-top-button:active {
+  transform: translateY(0);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+  .create-user-top-button {
+    top: 20px;
+
+    right: 80px;
+
+    min-height: 39px;
+
+    padding: 8px 14px;
+
+    font-size: 13px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+  .create-user-top-button {
+    top: 15px;
+
+    right: 50px;
+
+    min-height: 38px;
+
+    padding: 8px 13px;
+
+    font-size: 13px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  .create-user-top-button {
+    top: 12px;
+
+    right: 15px;
+
+    min-height: 36px;
+
+    padding: 7px 11px;
+
+    font-size: 12px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 350px) {
+  .create-user-top-button {
+    top: 10px;
+
+    right: 10px;
+
+    min-height: 34px;
+
+    padding: 6px 9px;
+
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,306 @@
+/* =========================================================
+   CREATE USER PAGE
+   Works with App.css Light / Dark theme
+========================================================= */
+
+.create-user-page,
+.create-user-page * {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.create-user-page {
+  width: 100%;
+
+  padding: 95px 20px 40px;
+
+  min-height: calc(100vh - 68px);
+
+  background-color: var(--background);
+  color: var(--text);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =========================================================
+   CREATE USER CONTAINER
+========================================================= */
+
+.create-user-container {
+  width: 90%;
+  max-width: 650px;
+
+  margin: 25px auto;
+
+  padding: 30px;
+
+  background-color: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-top: 5px solid #2563eb;
+
+  border-radius: 12px;
+
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =========================================================
+   DARK MODE CONTAINER
+========================================================= */
+
+.app.dark .create-user-container {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.create-user-header {
+  margin-bottom: 25px;
+
+  text-align: center;
+}
+
+.create-user-header h2 {
+  margin: 0 0 8px;
+
+  font-size: 25px;
+  font-weight: 700;
+
+  color: #2563eb;
+}
+
+.create-user-header p {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: var(--label-text);
+
+  opacity: 0.9;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.create-user-form {
+  width: 100%;
+}
+
+/* =========================================================
+   FORM FIELD
+========================================================= */
+
+.create-user-field {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 18px;
+}
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.create-user-field label {
+  margin-bottom: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--label-text);
+
+  transition: color 0.3s ease;
+}
+
+/* =========================================================
+   INPUT + SELECT
+========================================================= */
+
+.create-user-field input,
+.create-user-field select {
+  width: 100%;
+
+  padding: 11px 12px;
+
+  border: 1px solid var(--input-border);
+
+  border-radius: 7px;
+
+  background-color: var(--input-background);
+
+  color: var(--input-text);
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.create-user-field input::placeholder {
+  color: var(--disabled-text);
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.create-user-field input:hover,
+.create-user-field select:hover {
+  border-color: #9ca3af;
+}
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.create-user-field input:focus,
+.create-user-field select:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.create-user-field select {
+  cursor: pointer;
+}
+
+/* =========================================================
+   CREATE USER BUTTON
+========================================================= */
+
+.create-user-button {
+  width: 100%;
+
+  padding: 13px;
+
+  margin-top: 8px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background-color: #2563eb;
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.create-user-button:hover {
+  background-color: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+/* =========================================================
+   BUTTON ACTIVE
+========================================================= */
+
+.create-user-button:active {
+  transform: translateY(0);
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================================
+   BUTTON FOCUS
+========================================================= */
+
+.create-user-button:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.25);
+
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .create-user-page {
+    padding: 85px 15px 30px;
+  }
+
+  .create-user-container {
+    width: 94%;
+
+    padding: 22px;
+
+    margin-top: 20px;
+  }
+
+  .create-user-header h2 {
+    font-size: 21px;
+  }
+
+  .create-user-header p {
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .create-user-page {
+    padding: 80px 10px 25px;
+  }
+
+  .create-user-container {
+    width: 96%;
+
+    padding: 18px;
+  }
+
+  .create-user-field input,
+  .create-user-field select {
+    padding: 10px;
+  }
+
+  .create-user-button {
+    padding: 12px;
+  }
+}

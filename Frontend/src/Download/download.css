@@ -1,0 +1,42 @@
+/* =========================================================
+   DOWNLOAD BUTTON
+========================================================= */
+
+.download-button {
+  width: 100px;
+  border: none;
+
+  padding: 11px 10px;
+
+  border-radius: 7px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+
+  background-color: #6c757d;
+
+  color: white;
+
+  min-width: 220px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.download-button:hover {
+  background-color: #5c636a;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 10px rgba(108, 117, 125, 0.3);
+}
+
+.download-button:active {
+  transform: translateY(0);
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}

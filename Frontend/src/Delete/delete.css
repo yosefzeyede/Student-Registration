@@ -1,0 +1,302 @@
+/* =====================================================
+   DELETE STUDENT FORM
+===================================================== */
+
+.update-form {
+  width: min(100%, 650px);
+  margin: 100px 100px;
+  padding: 32px;
+
+  background: var(--card);
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.update-form h2 {
+  margin: 0 0 10px;
+
+  color: var(--text);
+
+  font-size: 28px;
+  font-weight: 700;
+
+  text-align: center;
+
+  padding-bottom: 14px;
+
+  border-bottom: 3px solid #dc2626;
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.update-form .description {
+  margin: 18px 0 28px;
+
+  color: var(--label-text);
+
+  font-size: 15px;
+  font-weight: 500;
+
+  text-align: center;
+}
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.update-form .form-group {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 22px;
+}
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.update-form .form-group label {
+  margin-bottom: 8px;
+
+  color: var(--label-text);
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.update-form .form-group input {
+  width: 100%;
+
+  padding: 13px 14px;
+
+  background: var(--input-background);
+  color: var(--input-text);
+
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.3s ease;
+}
+
+/* Placeholder */
+
+.update-form .form-group input::placeholder {
+  color: var(--disabled-text);
+}
+
+/* Input focus */
+
+.update-form .form-group input:focus {
+  border-color: #dc2626;
+
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+/* =====================================================
+   DELETE BUTTON
+===================================================== */
+
+.update-form > button[type="submit"] {
+  width: 100%;
+
+  padding: 13px 18px;
+
+  margin-top: 5px;
+
+  background: #dc2626;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Hover */
+
+.update-form > button[type="submit"]:hover {
+  background: #b91c1c;
+
+  box-shadow: 0 5px 14px rgba(220, 38, 38, 0.25);
+
+  transform: translateY(-1px);
+}
+
+/* Click */
+
+.update-form > button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Keyboard focus */
+
+.update-form > button[type="submit"]:focus-visible {
+  outline: 3px solid rgba(220, 38, 38, 0.25);
+  outline-offset: 3px;
+}
+
+/* =====================================================
+   SUCCESS MESSAGE
+===================================================== */
+
+.update-form .success-message {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+
+  background: rgba(22, 163, 74, 0.1);
+  color: #15803d;
+
+  border: 1px solid rgba(22, 163, 74, 0.3);
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-align: center;
+}
+
+/* =====================================================
+   ERROR MESSAGE
+===================================================== */
+
+.update-form .error-message {
+  margin-bottom: 20px;
+  padding: 12px 14px;
+
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-align: center;
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+.app.dark .update-form {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.app.dark .update-form .success-message {
+  color: #4ade80;
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.app.dark .update-form .error-message {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+  .update-form {
+    width: calc(100% - 32px);
+
+    margin: 30px auto;
+
+    padding: 26px;
+  }
+
+  .update-form h2 {
+    font-size: 24px;
+  }
+
+  .update-form .description {
+    font-size: 14px;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE - MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  .update-form {
+    width: calc(100% - 20px);
+
+    margin: 20px auto;
+
+    padding: 20px;
+
+    border-radius: 10px;
+  }
+
+  .update-form h2 {
+    font-size: 21px;
+
+    padding-bottom: 12px;
+  }
+
+  .update-form .description {
+    margin: 15px 0 22px;
+
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .update-form .form-group {
+    margin-bottom: 18px;
+  }
+
+  .update-form .form-group label {
+    font-size: 14px;
+  }
+
+  .update-form .form-group input {
+    padding: 12px;
+
+    font-size: 14px;
+  }
+
+  .update-form > button[type="submit"] {
+    padding: 12px;
+
+    font-size: 14px;
+  }
+}

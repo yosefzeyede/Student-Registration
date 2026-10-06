@@ -1,0 +1,561 @@
+/* =========================================================
+   UPDATE STUDENT FORM
+   Responsive: Mobile / Tablet / Laptop / Desktop
+   Works with .app and .app.dark theme variables
+========================================================= */
+
+/* =========================================================
+   1. MAIN CONTAINER
+========================================================= */
+
+.update-form {
+  width: 100%;
+
+  margin: 40px auto;
+  padding: 32px;
+
+  background: var(--card);
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Dark mode shadow */
+
+.app.dark .update-form {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================================
+   2. FORM TITLE
+========================================================= */
+
+.update-form h2 {
+  margin: 0 0 30px;
+
+  text-align: center;
+
+  color: var(--text);
+
+  font-size: 25px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+/* =========================================================
+   3. FORM GROUP
+========================================================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   4. LABEL
+========================================================= */
+
+.form-group label {
+  margin-bottom: 8px;
+
+  color: var(--label-text);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   5. INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  background-color: var(--input-background);
+  color: var(--input-text);
+
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+
+  outline: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =========================================================
+   6. INPUT FOCUS
+========================================================= */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: yellow;
+
+  box-shadow: 0 0 0 3px yellow;
+}
+
+/* =========================================================
+   7. PLACEHOLDER
+========================================================= */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--disabled-text);
+}
+
+/* =========================================================
+   8. TEXTAREA
+========================================================= */
+
+.form-group textarea {
+  min-height: 110px;
+
+  resize: vertical;
+}
+
+/* =========================================================
+   9. SELECT
+========================================================= */
+
+.form-group select {
+  cursor: pointer;
+}
+
+/* =========================================================
+   10. DATE INPUT
+========================================================= */
+
+.form-group input[type="date"] {
+  min-height: 46px;
+}
+
+/* Dark mode date picker */
+
+.app.dark .form-group input[type="date"] {
+  color-scheme: dark;
+}
+
+/* =========================================================
+   11. CLASS + SECTION WRAPPER
+========================================================= */
+
+.class-section-wrapper {
+  margin-top: 8px;
+  margin-bottom: 25px;
+
+  padding: 20px;
+
+  background-color: var(--background);
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* =========================================================
+   12. UPDATE BUTTON
+========================================================= */
+
+.update-form > button[type="submit"] {
+  width: 100%;
+
+  padding: 13px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: yellow;
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Hover */
+
+.update-form > button[type="submit"]:hover {
+  background-color: yellowgreen;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.25);
+}
+.update-form .update-button {
+  background-color: yellow;
+}
+/* Click */
+
+.update-form > button[type="submit"]:active {
+  transform: translateY(0);
+
+  box-shadow: none;
+}
+
+/* =========================================================
+   13. SUCCESS MESSAGE
+========================================================= */
+
+.success-message {
+  margin-bottom: 20px;
+  padding: 12px 15px;
+
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+
+  border: 1px solid #22c55e;
+  border-radius: 8px;
+
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   14. ERROR MESSAGE
+========================================================= */
+
+.error-message {
+  margin-bottom: 20px;
+  padding: 12px 15px;
+
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+
+  border: 1px solid #ef4444;
+  border-radius: 8px;
+
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   15. DISABLED ELEMENTS
+========================================================= */
+
+.form-group input:disabled,
+.form-group select:disabled,
+.form-group textarea:disabled {
+  background-color: var(--disabled-background);
+  color: var(--disabled-text);
+
+  cursor: not-allowed;
+
+  opacity: 0.8;
+}
+
+/* =========================================================
+   16. LARGE DESKTOP
+   1440px and above
+========================================================= */
+
+@media (min-width: 1440px) {
+  .update-form {
+    max-width: 850px;
+
+    margin-top: 50px;
+
+    padding: 38px;
+  }
+
+  .update-form h2 {
+    font-size: 27px;
+
+    margin-bottom: 32px;
+  }
+
+  .form-group {
+    margin-bottom: 22px;
+  }
+
+  .form-group label {
+    font-size: 16px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 13px 15px;
+
+    font-size: 16px;
+  }
+
+  .class-section-wrapper {
+    padding: 22px;
+  }
+
+  .update-form > button[type="submit"] {
+    padding: 14px 20px;
+
+    font-size: 17px;
+  }
+}
+
+/* =========================================================
+   17. DESKTOP
+   1200px - 1439px
+========================================================= */
+
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .update-form {
+    max-width: 760px;
+
+    margin-top: 20px;
+  }
+}
+
+/* =========================================================
+   18. LAPTOP
+   992px - 1199px
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .update-form {
+    width: 90%;
+    max-width: 700px;
+
+    margin: 20px auto;
+
+    padding: 30px;
+  }
+
+  .update-form h2 {
+    font-size: 24px;
+  }
+}
+
+/* =========================================================
+   19. TABLET
+   768px - 991px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .update-form {
+    width: 90%;
+
+    margin: 20px auto;
+
+    padding: 26px;
+  }
+
+  .update-form h2 {
+    margin-bottom: 25px;
+
+    font-size: 22px;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 11px 13px;
+
+    font-size: 14px;
+  }
+
+  .class-section-wrapper {
+    padding: 18px;
+  }
+}
+
+/* =========================================================
+   20. LARGE MOBILE
+   576px - 767px
+========================================================= */
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .update-form {
+    width: 92%;
+
+    margin: 25px auto;
+
+    padding: 22px;
+  }
+
+  .update-form h2 {
+    margin-bottom: 23px;
+
+    font-size: 21px;
+  }
+
+  .form-group {
+    margin-bottom: 17px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 11px 12px;
+
+    font-size: 14px;
+  }
+
+  .class-section-wrapper {
+    padding: 16px;
+  }
+
+  .update-form > button[type="submit"] {
+    padding: 12px;
+
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   21. SMALL MOBILE
+   Below 576px
+========================================================= */
+
+@media (max-width: 575px) {
+  .update-form {
+    width: calc(100% - 20px);
+
+    margin: 15px auto;
+
+    padding: 18px 15px;
+
+    border-radius: 12px;
+  }
+
+  .update-form h2 {
+    margin-bottom: 22px;
+
+    font-size: 19px;
+
+    line-height: 1.4;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    margin-bottom: 6px;
+
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 11px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+  }
+
+  .form-group textarea {
+    min-height: 90px;
+  }
+
+  .class-section-wrapper {
+    margin-bottom: 20px;
+
+    padding: 14px;
+
+    border-radius: 8px;
+  }
+
+  .update-form > button[type="submit"] {
+    padding: 12px;
+
+    font-size: 15px;
+  }
+
+  .success-message,
+  .error-message {
+    padding: 10px 12px;
+
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   22. VERY SMALL MOBILE
+   Below 360px
+========================================================= */
+
+@media (max-width: 359px) {
+  .update-form {
+    width: calc(100% - 12px);
+
+    margin: 10px auto;
+
+    padding: 15px 12px;
+  }
+
+  .update-form h2 {
+    font-size: 17px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px;
+
+    font-size: 13px;
+  }
+
+  .update-form > button[type="submit"] {
+    padding: 11px;
+
+    font-size: 14px;
+  }
+}
